@@ -30,6 +30,8 @@ class AxiosPostController extends Controller
 
     // $response = redirect('/');
 
-    return redirect()->route('axios-post2');
+    \Log::info('ログ出力テスト');
+
+    // return redirect()->route('axios-post2');
   }
 }
