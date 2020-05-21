@@ -23,9 +23,7 @@ Route::get('/test', function () {
   return 'Axios Test';
 });
 
-Route::get('/axios-post', function () {
-  return  'Axios Test';
-});
+Route::post('/axios-post', 'AxiosPostController@store');
 
 // Route::post('/axios-post2', 'AxiosPostController@store');
 

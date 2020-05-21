@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Redis;
 
 use Illuminate\Http\RedirectResponse;
 
+use App\Post;
+
 
 class AxiosPostController extends Controller
 {
@@ -19,16 +21,15 @@ class AxiosPostController extends Controller
 
   public function store(Request $request)
   {
-    // $post = new Post;
+    $post = new Post;
 
-    // $post->title = $request->title;
-    // $post->text = $request->text;
-    // $post->user_id = 2;
-    // // $post->user_id = $request->user()->id;
+    $post->title = $request->title;
+    $post->text = $request->text;
+    $post->user_id = 2;
+    // $post->user_id = $request->user()->id;
 
-    // $post->save();
+    $post->save();
 
-    // $response = redirect('/');
 
     \Log::info('ログ出力テスト');
 
