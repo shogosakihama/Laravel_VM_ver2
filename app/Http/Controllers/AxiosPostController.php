@@ -16,7 +16,10 @@ class AxiosPostController extends Controller
 {
   public function index(Request $request)
   {
-    return redirect()->back();
+    $posts = Post::take(10)->get();
+    // \Log::info('ログ出力テスト');
+
+    return response()->json(['posts' => $posts]);
   }
 
   public function store(Request $request)
@@ -31,8 +34,19 @@ class AxiosPostController extends Controller
     $post->save();
 
 
-    \Log::info('ログ出力テスト');
+    // \Log::info('ログ出力テスト');
 
     // return redirect()->route('axios-post2');
+  }
+
+  public function destroy(Request $request)
+  {
+
+    \Log::info('test');
+
+    $post = Post::find($request->id);
+
+
+    $post->delete();
   }
 }

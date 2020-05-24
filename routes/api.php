@@ -19,12 +19,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/test', function () {
-  return 'Axios Test';
-});
+Route::get('/', 'AxiosPostController@index');
 
 Route::post('/axios-post', 'AxiosPostController@store');
 
 // Route::post('/axios-post2', 'AxiosPostController@store');
 
 Route::match(["post", "options"], 'axios-post2', 'AxiosPostController@store');
+
+Route::match(["post", "options"], 'remove', 'AxiosPostController@destroy');
