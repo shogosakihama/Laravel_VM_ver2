@@ -14,7 +14,7 @@ use App\Post;
 
 class AxiosPostController extends Controller
 {
-  public function index(Request $request)
+  public function index()
   {
     $posts = Post::take(10)->get();
     // \Log::info('ログ出力テスト');
