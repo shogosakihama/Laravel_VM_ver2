@@ -39,14 +39,13 @@ class AxiosPostController extends Controller
     // return redirect()->route('axios-post2');
   }
 
-  public function destroy(Request $request)
+  public function destroy($id)
   {
 
     \Log::info('test');
 
-    $post = Post::find($request->id);
+    $post = Post::find($id);
 
-$test = "test";
     $post->delete();
   }
 }
