@@ -46,7 +46,7 @@ class AxiosPostController extends Controller
 
     $post = Post::find($request->id);
 
-
+$test = "test";
     $post->delete();
   }
 }
