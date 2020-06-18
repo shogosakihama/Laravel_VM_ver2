@@ -30,3 +30,5 @@ Route::match(["post", "options"], 'axios-post2', 'AxiosPostController@store');
 Route::match(["post", "options"], 'remove', 'AxiosPostController@destroy');
 
 Route::match(["get", "options"], 'edit', 'AxiosPostController@edit');
+
+Route::match(["post", "options"], 'update', 'AxiosPostController@update');

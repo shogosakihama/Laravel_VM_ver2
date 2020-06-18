@@ -58,10 +58,11 @@ class AxiosPostController extends Controller
 
   public function update(Request $request)
   {
+    $post = Post::find($request->id);
+
+    $post->text = $request->text;
 
     \Log::info('test');
-
-    $post = Post::find($request->id);
 
     $post->save();
   }
