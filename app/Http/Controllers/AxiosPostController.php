@@ -60,6 +60,8 @@ class AxiosPostController extends Controller
   {
     $post = Post::find($request->id);
 
+    $post->title = $request->title;
+
     $post->text = $request->text;
 
     \Log::info('test');
