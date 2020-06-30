@@ -24,7 +24,7 @@ class AuthController extends Controller
    */
   public function login()
   {
-    \Log::info('test');
+    \Log::info('login_false');
     $credentials = request(['email', 'password']);
 
     if (!$token = auth()->attempt($credentials)) {
@@ -51,6 +51,7 @@ class AuthController extends Controller
    */
   public function logout()
   {
+    \Log::info('logout_false');
     auth()->logout();
 
     return response()->json(['message' => 'Successfully logged out']);
