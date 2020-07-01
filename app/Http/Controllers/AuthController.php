@@ -25,7 +25,9 @@ class AuthController extends Controller
   public function login()
   {
     \Log::info('login_false');
+    // $credentials = request(['email', 'password']);
     $credentials = request(['email', 'password']);
+    \Log::info($credentials);
 
     if (!$token = auth()->attempt($credentials)) {
       return response()->json(['error' => 'Unauthorized'], 401);
@@ -39,7 +41,7 @@ class AuthController extends Controller
    *
    * @return \Illuminate\Http\JsonResponse
    */
-  public function me()
+  public function user()
   {
     return response()->json(auth()->user());
   }
